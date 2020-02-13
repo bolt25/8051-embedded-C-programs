@@ -1,0 +1,178 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    01/30/2020  15:45:29  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\lab3.obj TO .\Objects\lab3 PRINT (.\Listings\lab3.m51) RAMS
+>> IZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\lab3.obj (LAB3)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\lab3 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?LAB3
+                    000CH     0014H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?LAB3
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     003CH     UNIT         ?PR?MAIN?LAB3
+            CODE    08C8H     0016H     UNIT         ?PR?DELAY?LAB3
+            CODE    08DEH     000FH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\lab3 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LAB3
+  +--> ?C_INITSEG
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\lab3 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  01/30/2020  15:45:29  PAGE 2
+
+
+  C:0800H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0803H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0800H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0800H         LINE#         133
+  C:0802H         LINE#         134
+  C:0803H         LINE#         135
+  C:0804H         LINE#         136
+  C:0806H         LINE#         185
+  C:0809H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        LAB3
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0008H         PUBLIC        LSB_off
+  D:0009H         PUBLIC        MSB_off
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  C:08C8H         PUBLIC        delay
+  D:000AH         PUBLIC        LSB_on
+  D:000BH         PUBLIC        MSB_on
+  C:088CH         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  B:00A0H.1       PUBLIC        switch_bit
+  B:00A8H.1       PUBLIC        ET0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  B:0090H.1       PUBLIC        PWM
+  B:0020H.0       PUBLIC        x
+  -------         PROC          MAIN
+  C:088CH         LINE#         54
+  C:088CH         LINE#         55
+  C:088CH         LINE#         57
+  C:088FH         LINE#         58
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  01/30/2020  15:45:29  PAGE 3
+
+
+  C:0891H         LINE#         59
+  C:0893H         LINE#         60
+  C:0896H         LINE#         61
+  C:0899H         LINE#         62
+  C:089BH         LINE#         64
+  C:089BH         LINE#         65
+  C:089BH         LINE#         66
+  C:089EH         LINE#         67
+  C:089EH         LINE#         68
+  C:08A1H         LINE#         69
+  C:08A4H         LINE#         70
+  C:08A7H         LINE#         71
+  C:08AAH         LINE#         72
+  C:08ADH         LINE#         73
+  C:08ADH         LINE#         74
+  C:08AFH         LINE#         75
+  C:08B1H         LINE#         76
+  C:08B1H         LINE#         77
+  C:08B3H         LINE#         79
+  C:08B3H         LINE#         80
+  C:08B6H         LINE#         81
+  C:08B9H         LINE#         82
+  C:08BCH         LINE#         83
+  C:08BFH         LINE#         84
+  C:08C2H         LINE#         85
+  C:08C2H         LINE#         86
+  C:08C4H         LINE#         87
+  C:08C6H         LINE#         88
+  C:08C6H         LINE#         89
+  C:08C6H         LINE#         90
+  -------         ENDPROC       MAIN
+  -------         PROC          DELAY
+  C:08C8H         LINE#         94
+  C:08C8H         LINE#         96
+  C:08CAH         LINE#         97
+  C:08CDH         LINE#         98
+  C:08CDH         LINE#         99
+  C:08D0H         LINE#         100
+  C:08D3H         LINE#         101
+  C:08D4H         LINE#         102
+  C:08D7H         LINE#         103
+  C:08D7H         LINE#         104
+  C:08DAH         LINE#         105
+  C:08DDH         LINE#         106
+  C:08DDH         LINE#         107
+  -------         ENDPROC       DELAY
+  -------         ENDMOD        LAB3
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0072H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=13.1 xdata=0 code=243
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
