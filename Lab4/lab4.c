@@ -64,7 +64,7 @@ void main(){
 	IT0 = 1;  //FOR EDGE TRIGGERING
 	IT1 = 1; 	//FOR EDGE TRIGGERING
 	P2 = 0xFF;
-	MSB = 0xFB;	
+	MSB = 0xF8;	
 	LSB = 0XCD;
 	TH0 = MSB;
 	TL0 = LSB;
@@ -77,21 +77,20 @@ void main(){
 		}
 		else if (pwm_flag == 1){
 			if (timer_flag == 1){
+				timer_flag = 0;
 				P2 = ~P2;
 				if (P2 == 0x00){
-					MSB = 0xF1;
-					LSB = 0x00;
+					MSB = 0xF8;
+					LSB = 0xCD;
 				}
 				else if (P2 == 0xFF){
-					MSB = 0xf1;
-					LSB = 0x00;
+					MSB = 0xFB;
+					LSB = 0x33;
 				}
 			}
 		}
-	}
-	
+	}	
 }
-
 void ext0(void) interrupt 0{
 	pin_flag = 1;
 }

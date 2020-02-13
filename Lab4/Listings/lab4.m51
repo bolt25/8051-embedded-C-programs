@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/13/2020  15:47:30  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    02/13/2020  16:06:04  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -38,11 +38,11 @@ LINK MAP OF MODULE:  .\Objects\lab4 (?C_STARTUP)
             CODE    0013H     0003H     ABSOLUTE     
                     0016H     07EAH                  *** GAP ***
             CODE    0800H     008CH     UNIT         ?C_C51STARTUP
-            CODE    088CH     0059H     UNIT         ?PR?MAIN?LAB4
-            CODE    08E5H     0009H     UNIT         ?PR?TIMER0?LAB4
-            CODE    08EEH     0003H     UNIT         ?PR?EXT0?LAB4
-            CODE    08F1H     0003H     UNIT         ?PR?EXT1?LAB4
-            CODE    08F4H     0003H     UNIT         ?C_INITSEG
+            CODE    088CH     005DH     UNIT         ?PR?MAIN?LAB4
+            CODE    08E9H     0009H     UNIT         ?PR?TIMER0?LAB4
+            CODE    08F2H     0003H     UNIT         ?PR?EXT0?LAB4
+            CODE    08F5H     0003H     UNIT         ?PR?EXT1?LAB4
+            CODE    08F8H     0003H     UNIT         ?C_INITSEG
 
 
 
@@ -59,7 +59,7 @@ SEGMENT
 
 
 SYMBOL TABLE OF MODULE:  .\Objects\lab4 (?C_STARTUP)
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/13/2020  15:47:30  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/13/2020  16:06:04  PAGE 2
 
 
 
@@ -104,8 +104,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\lab4 (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
-  C:08EEH         PUBLIC        ext0
-  C:08F1H         PUBLIC        ext1
+  C:08F2H         PUBLIC        ext0
+  C:08F5H         PUBLIC        ext1
   B:00A8H.7       PUBLIC        EA
   B:0020H.0       PUBLIC        timer_flag
   C:088CH         PUBLIC        main
@@ -119,11 +119,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\lab4 (?C_STARTUP)
   B:00A8H.2       PUBLIC        EX1
   B:0088H.2       PUBLIC        IT1
   D:008AH         PUBLIC        TL0
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/13/2020  15:47:30  PAGE 3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/13/2020  16:06:04  PAGE 3
 
 
   B:0020H.2       PUBLIC        pwm_flag
-  C:08E5H         PUBLIC        timer0
+  C:08E9H         PUBLIC        timer0
   B:0088H.4       PUBLIC        TR0
   D:0008H         PUBLIC        LSB
   D:000AH         PUBLIC        MSB
@@ -150,43 +150,44 @@ SYMBOL TABLE OF MODULE:  .\Objects\lab4 (?C_STARTUP)
   C:08BBH         LINE#         78
   C:08BEH         LINE#         79
   C:08C1H         LINE#         80
-  C:08C4H         LINE#         81
-  C:08C9H         LINE#         82
-  C:08CEH         LINE#         83
-  C:08D2H         LINE#         84
-  C:08D4H         LINE#         85
-  C:08DAH         LINE#         86
-  C:08DFH         LINE#         87
-  C:08E3H         LINE#         88
-  C:08E3H         LINE#         89
-  C:08E3H         LINE#         90
-  C:08E3H         LINE#         91
+  C:08C3H         LINE#         81
+  C:08C6H         LINE#         82
+  C:08CBH         LINE#         83
+  C:08D0H         LINE#         84
+  C:08D5H         LINE#         85
+  C:08D7H         LINE#         86
+  C:08DDH         LINE#         87
+  C:08E2H         LINE#         88
+  C:08E7H         LINE#         89
+  C:08E7H         LINE#         90
+  C:08E7H         LINE#         91
+  C:08E7H         LINE#         92
   -------         ENDPROC       MAIN
   -------         PROC          EXT0
-  C:08EEH         LINE#         95
-  C:08EEH         LINE#         96
-  C:08F0H         LINE#         97
+  C:08F2H         LINE#         94
+  C:08F2H         LINE#         95
+  C:08F4H         LINE#         96
   -------         ENDPROC       EXT0
   -------         PROC          EXT1
-  C:08F1H         LINE#         99
-  C:08F1H         LINE#         100
-  C:08F3H         LINE#         101
+  C:08F5H         LINE#         98
+  C:08F5H         LINE#         99
+  C:08F7H         LINE#         100
   -------         ENDPROC       EXT1
   -------         PROC          TIMER0
-  C:08E5H         LINE#         103
-  C:08E5H         LINE#         104
-  C:08E7H         LINE#         105
-  C:08EAH         LINE#         106
-  C:08EDH         LINE#         107
+  C:08E9H         LINE#         102
+  C:08E9H         LINE#         103
+  C:08EBH         LINE#         104
+  C:08EEH         LINE#         105
+  C:08F1H         LINE#         106
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/13/2020  16:06:04  PAGE 4
+
+
   -------         ENDPROC       TIMER0
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  02/13/2020  15:47:30  PAGE 4
-
-
   -------         ENDMOD        LAB4
 
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0082H BYTE ( 6%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0086H BYTE ( 6%) *
 ******************************************************************************
 
-Program Size: data=13.3 xdata=0 code=259
+Program Size: data=13.3 xdata=0 code=263
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
