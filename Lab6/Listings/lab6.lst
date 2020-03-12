@@ -1,0 +1,127 @@
+C51 COMPILER V9.60.0.0   LAB6                                                              03/12/2020 15:42:05 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE LAB6
+OBJECT MODULE PLACED IN .\Objects\lab6.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE lab6.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\lab6
+                    -.lst) TABS(2) OBJECT(.\Objects\lab6.obj)
+
+line level    source
+
+   1          //question 6)
+   2          #include <reg51.h>
+   3          #include <intrins.h>
+   4          
+   5          void ready(void);
+   6          void lcdcmd(unsigned char);
+   7          void lcddata(unsigned char);
+   8          void display(void);
+   9          void delay(unsigned int);
+  10          unsigned char code lcd1[] = "Dharmik";
+  11          unsigned char code lcd2[] = "U17EE021";
+  12          sbit busy = P0^7;
+  13          sbit resel = P2^7;
+  14          sbit rdwr = P2^6;
+  15          sbit lcden = P2^5;
+  16          unsigned char i;
+  17          void main()
+  18          {
+  19   1        while(1)
+  20   1        {
+  21   2          display();
+  22   2          lcdcmd(0x80);
+  23   2          for (i = 0; i < 7 ; i++)
+  24   2        {
+  25   3          lcddata(lcd1[i]);
+  26   3          delay(500);
+  27   3        }
+  28   2        lcdcmd(0xc0);
+  29   2        for (i = 0; i < 8; i++)
+  30   2        {
+  31   3          lcddata(lcd2[i]);
+  32   3          delay(500);
+  33   3        }
+  34   2        }
+  35   1      }
+  36          void display()
+  37          {
+  38   1        
+  39   1        lcdcmd(0x38);
+  40   1        delay(10);
+  41   1        lcdcmd(0x01);
+  42   1        delay(10);
+  43   1        lcdcmd(0x02);
+  44   1        delay(10);
+  45   1        lcdcmd(0x06);
+  46   1        delay(10);
+  47   1        lcdcmd(0x0f);
+  48   1        
+  49   1      }
+  50          
+  51          void lcddata(unsigned char temp)
+  52          {
+  53   1        ready();
+  54   1        P0 = temp;
+C51 COMPILER V9.60.0.0   LAB6                                                              03/12/2020 15:42:05 PAGE 2   
+
+  55   1        resel = 1;
+  56   1        rdwr = 0;
+  57   1        lcden = 1;
+  58   1        delay(10);
+  59   1        lcden = 0;
+  60   1        return;
+  61   1      }
+  62          
+  63          void lcdcmd(unsigned char temp)
+  64          {
+  65   1        ready();
+  66   1        P0 = temp;
+  67   1        resel = 0;
+  68   1        rdwr = 0;
+  69   1        lcden = 1;
+  70   1        delay(10);
+  71   1        lcden = 0;
+  72   1        //return;
+  73   1      }
+  74          
+  75          void ready(void)
+  76          {
+  77   1        P0 = 0xff;
+  78   1        resel = 0;
+  79   1        rdwr = 1;
+  80   1        while (busy == 1)
+  81   1        {
+  82   2          lcden = 0;
+  83   2          delay(1);
+  84   2          lcden = 1;
+  85   2        }
+  86   1        lcden = 0;
+  87   1        rdwr = 0;
+  88   1      }
+  89          
+  90          void delay(unsigned int t)
+  91          {
+  92   1        unsigned int i;
+  93   1        unsigned int n;
+  94   1        for (i=0;i<t;i++)
+  95   1        {
+  96   2          for(n=0;n<1000;n++)
+  97   2          {
+  98   3            ;
+  99   3          }
+ 100   2        }
+ 101   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    220    ----
+   CONSTANT SIZE    =     17    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
